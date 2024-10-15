@@ -19,3 +19,14 @@ while i < 10:
     
 #%%
 # A for loop is used to iterate over a sequence.
+
+for i in range(10):
+    print(i)
+
+#%%    
+
+fruits_list = ['apple', 'orange', 'grapes', 'coconut']
+
+for fruit in fruits_list:
+    print(fruit)
+# %%
