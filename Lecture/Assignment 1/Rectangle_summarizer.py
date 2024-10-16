@@ -36,18 +36,32 @@ with open('rectangles_data.csv', newline="") as f:
 import math
 import statistics as st
 import csv
-def calculate_total_area(rectangles_data.csv):
 
-    with open('rectangles_data.csv') as f:
+with open('rectangles_data.csv', newline="") as f:
         reader = csv.reader(f)
-        next(reader)
-        for row in reader:
-                width = float(row[1])
-                lenght = float(row[2])
+        next(reader) ## table of strings - next to not read header
+        width_list = [] ## three empty lists to be appended to the values
+        height_list = []
+        area_list = []
+        for row in reader: # for creates a loop
+            width = float(row[1]) ## Float to tell the system the csv are numbers not strings
+            height = float(row[2])
+            width_list.append(width)
+            height_list.append(height)
+            area_list.append(width * height)
+        # print(f'{max(area_list)}') ## this is to test
+    ## create a data dictionary
+        data = {
+         'max': max(area_list),
+         'min': min(area_list),
+         'count': len(area_list),
+         'average':st.mean(area_list),
+         'total value': sum(area_list)
+         }
 
-                area = width * lenght
-                total_area = sum(area)
-    
+
+#%%
+
             
 
         
