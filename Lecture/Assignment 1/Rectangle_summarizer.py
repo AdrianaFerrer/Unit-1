@@ -58,6 +58,21 @@ with open('rectangles_data.csv', newline="") as f:
          'average':st.mean(area_list),
          'total value': sum(area_list)
          }
+        
+        csv_file = "Summary_Results_Rectanglesf.csv"
+        
+        with open("Summary_Results_Rectanglesf.csv", 'w', newline="", encoding= 'utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(data.keys())
+            writer.writerow(data.values())
+
+
+
+## print
+#print(f'max={max(area_list)},\nmin={min(area_list)},\ncount={len(area_list)},\naverage={st.mean(area_list)}') 
+
+
+
 
 
 #%%
